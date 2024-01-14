@@ -14,7 +14,7 @@ import {
   
     @IsNotEmpty()
     @IsString()
-    @Length(36)
+    @Length(36, 36, {message: 'sdsad'})
     productId: string;
   
     @IsNotEmpty()
