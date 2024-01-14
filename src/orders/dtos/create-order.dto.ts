@@ -8,10 +8,6 @@ import {
 
   
   export class CreateOrderDTO {
-    @IsNotEmpty()
-    @IsString()
-    @Length(5, 50)
-    address: string;
   
     @IsNotEmpty()
     @IsString()
@@ -20,5 +16,6 @@ import {
   
     @IsNotEmpty()
     @IsString()
-    client: string;
+    @IsUUID()
+    clientId: string;
   }
