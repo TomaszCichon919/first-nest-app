@@ -3,6 +3,7 @@ import {
     IsNotEmpty,
     IsString,
     Length,
+    IsUUID
   } from 'class-validator';
   
   export class UpdateOrderDTO {
@@ -13,7 +14,7 @@ import {
   
     @IsNotEmpty()
     @IsString()
-    @Length(36, 36, { message: 'Product ID length should be exactly 36 characters' })
+    @IsUUID()
     productId: string;
   
     @IsNotEmpty()
@@ -21,31 +22,3 @@ import {
     client: string;
   }
 
-//   import {
-//     ValidationOptions,
-//     registerDecorator,
-//     ValidationArguments,
-//   } from 'class-validator';
-//   import { v4 as uuidv4 } from 'uuid';
-  
-//   export function IsUUID(validationOptions?: ValidationOptions) {
-//     return function (object: Object, propertyName: string) {
-//       registerDecorator({
-//         name: 'isUUID',
-//         target: object.constructor,
-//         propertyName: propertyName,
-//         options: validationOptions,
-//         validator: {
-//           validate(value: any, args: ValidationArguments) {
-//             if (!value) {
-//               return false;
-//             }
-//             return uuidv4(value);
-//           },
-//           defaultMessage(args: ValidationArguments) {
-//             return `${args.property} must be a valid UUID`;
-//           },
-//         },
-//       });
-//     };
-//   }

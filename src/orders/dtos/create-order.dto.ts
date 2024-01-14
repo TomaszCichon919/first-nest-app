@@ -3,6 +3,7 @@ import {
     IsNotEmpty,
     IsString,
     Length,
+    IsUUID
   } from 'class-validator';
 
   
@@ -14,7 +15,7 @@ import {
   
     @IsNotEmpty()
     @IsString()
-    @Length(36, 36, {message: 'sdsad'})
+    @IsUUID()
     productId: string;
   
     @IsNotEmpty()
